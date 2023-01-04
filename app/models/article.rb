@@ -1,7 +1,7 @@
 class Article < ApplicationRecord
   validates :title, :body, presence: true
 
-  belongs_to :user
+  belongs_to :user, optional: true
   has_and_belongs_to_many :categories
   has_many :comments
 
@@ -16,5 +16,10 @@ class Article < ApplicationRecord
 
   def published?
     published_at.present?
+  end
+
+  def owned_by?(owner)
+    return false unless owner.is_a?(User)
+    user == owner
   end
 end

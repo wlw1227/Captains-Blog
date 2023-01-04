@@ -2,7 +2,7 @@ class Comment < ApplicationRecord
   belongs_to :article
 
   validates :name, :email, :body, presence: true
-  validates :article_should_be_published
+  #validates :article_should_be_published
 
   after_create :email_article_author
 
