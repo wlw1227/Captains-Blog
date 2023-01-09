@@ -15,6 +15,7 @@ class ApplicationController < ActionController::Base
   end
 
   def access_denied
+    login_path = new_user_session_path
     redirect_to(login_path, notice: "Please log in to continue") and return false
   end
 end
