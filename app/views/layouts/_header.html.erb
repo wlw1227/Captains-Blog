@@ -1,0 +1,13 @@
+<header class="bg-white p-4 flex justify-between">
+  <div class="flex">
+    <%= link_to "Captain's Blog", root_path, class: "px-4 py-2 mr-4 text-lg font-medium" %>
+    <%= link_to 'My Articles', articles_path, class: "px-2 py-2 mr-4 text-lg font-medium  rounded-md  hover:bg-gray-200" %>
+    <%= link_to 'New article', new_article_path, class: "px-2 py-2 mr-4 text-lg font-medium  rounded-md  hover:bg-gray-200" %>
+  </div>
+  <nav class="flex">
+    <%= link_to 'Sign In', new_user_session_path, class: "px-2 py-2 mr-4 text-lg font-medium  rounded-md  hover:bg-gray-200" %>
+    <%= link_to 'Sign Out', destroy_user_session_path, data: { turbo_method: :delete }, class: "px-2 py-2 mr-4 text-lg font-medium  rounded-md  hover:bg-gray-200" %>
+    <%= link_to 'Sign Up', new_user_registration_path, class: "px-2 py-2 mr-4 text-lg font-medium  rounded-md  hover:bg-gray-200" %>
+  </nav>
+</header>
+
