@@ -1,6 +1,8 @@
 class Comment < ApplicationRecord
   belongs_to :article
+  belongs_to :user
 
+  validates :user, presence: true
   validates :name, :email, :body, presence: true
   #validates :article_should_be_published
 

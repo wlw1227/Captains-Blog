@@ -11,4 +11,5 @@ class User < ApplicationRecord
   has_many :replies, through: :articles, source: :comments
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  validates_uniqueness_of :email
 end

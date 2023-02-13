@@ -13,6 +13,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles/new
   def new
+    current_user: current_user
     @article = Article.new
   end
 
