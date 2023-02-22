@@ -15,7 +15,7 @@ gem "jbuilder"
 gem "redis", "~> 4.0"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
-gem 'devise', '~> 4.8', '>= 4.8.1'
+gem 'devise', '~> 4.9'
 gem 'rspec-rails', '~> 6.0', '>= 6.0.1'
 
 # Use Sass to process CSS
