@@ -13,4 +13,8 @@ class ApplicationController < ActionController::Base
     login_path = new_user_session_path
     redirect_to(login_path, notice: "Please log in to continue") and return false
   end
+
+  def after_sign_up_path_for(resource)
+    new_profile_path
+  end
 end
