@@ -22,5 +22,4 @@ class Article < ApplicationRecord
     return false unless owner.is_a?(User)
     user == owner
   end
-
 end
