@@ -1,6 +1,15 @@
-<h2>Forgot your password?</h2>
+<div clas="flex">
+  <div class="flex bg-black justify-center" >
+    <hr class="w-12 h-px my-5 mb-2 bg-gray-400">
+    <div class="bg-gray-400" style="width: 12rem; border-top-left-radius: 3rem; border-top-right-radius: 3rem; border-bottom-right-radius: 3rem; border-bottom-left-radius: 3rem">
+      <h1 class="ml-3 text-2xl mb-1">New Password</h1>
+    </div>
+    <hr class="w-12 h-px my-5 mb-2 bg-gray-400">
+  </div>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <br>
+  <div class="flex text-white justify-center">
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
@@ -13,4 +22,11 @@
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+
+    
+  </div>
+</div>
+
+
+
+

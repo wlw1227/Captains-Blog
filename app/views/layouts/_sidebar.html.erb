@@ -1,0 +1,21 @@
+<div class="flex">
+  <div class="sidebar flex-col bg-blue-500 h-screen" style="margin: 0.25rem 0 0 0.5rem; width: 8rem">
+    <ul>
+      <button class="hover:bg-blue-200 w-32 h-16 border-b-2 border-black" style="">
+        <li><%= link_to 'Home', root_path, style: "margin: 4rem 0 4rem 0"%></li>
+      </button>
+      <button class="hover:bg-blue-200 w-32 h-16 border-b-2 border-black" style="">
+        <li>
+          <% if user_signed_in? %> 
+            <%= link_to 'My Entries', articles_path(user_id: current_user.id), class: "" %>
+          <% else %>
+            <%= link_to 'My Entries', new_user_session_path %>
+          <% end %>
+        </li>
+      </button>
+      <button class="hover:bg-blue-200 w-32 h-16 border-b-2 border-black" style="">
+        <li><%= link_to 'New Entry', new_article_path, class: "" %></li>
+      </button>
+    </ul>
+  </div>
+</div>

@@ -1,10 +1,9 @@
-<div id="<%= dom_id article %>">
+<div id="<%= dom_id article %>" class="text-white">
   <h4 class="font-medium font-bold underline">
     <%= link_to article.title, article %>
     <% if article.owned_by? current_user %>
       <span class="actions">
-        <%= link_to "Show this article", article, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-        <%= link_to 'Edit this article', edit_article_path(article), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+        <%= link_to 'Edit', edit_article_path(article), class: "rounded-lg ml-2 px-2 inline-block font-medium text-white border-2 border-white" %>
       </span>
     <% end %>
   </h4> 
