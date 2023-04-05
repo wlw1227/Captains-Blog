@@ -4,7 +4,11 @@ class ArticlesController < ApplicationController
 
   # GET /articles or /articles.json
   def index
-    @articles = Article.all
+    if params[:user_id]
+      @articles = Article.where(user_id: params[:user_id])
+    else
+      @articles = Article.all
+    end
   end
 
   # GET /articles/1 or /articles/1.json

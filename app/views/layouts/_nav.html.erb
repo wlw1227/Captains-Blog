@@ -1,0 +1,22 @@
+<div class="flex">
+  <div class="flex-none w-full bg-blue-500" style="margin: 0 0 0 0.5rem; width: 8rem">
+  </div>
+  <nav class="flex w-full bg-blue-500" style="margin: 0 0.5rem 0 0; border-bottom-right-radius: 6rem">
+    <div class="flex ml-auto justify-end bg-blue-200" style="width: 100%; border-top-left-radius: 3rem; border-bottom-right-radius: 6rem; ">
+      <div class="mr-auto px-4 py-2 text-lg">
+        <% if user_signed_in? %>
+          <p>Welcome Captain <%= current_user.username %></p>
+        <% else %>
+          <p>Welcome guest</p>
+        <% end %>
+      </div>
+      <% if user_signed_in? %>
+        <%= link_to 'Sign Out', destroy_user_session_path, data: { turbo_method: :delete }, class: "py-2 mr-4 text-lg font-medium  rounded-md  hover:bg-gray-200" %>
+      <% else %>
+        <%= link_to 'Sign In', new_user_session_path, class: "px-2 py-2 mr-4 text-lg font-medium  rounded-md  hover:bg-gray-200" %>
+        <%= link_to 'Sign Up', new_user_registration_path, class: "px-2 py-2 mr-4 text-lg font-medium  rounded-md  hover:bg-gray-200" %>
+      <% end %>
+      <div class="bg-black px-0.5 mr-12"></div>
+    </div>
+  </nav>
+</div>

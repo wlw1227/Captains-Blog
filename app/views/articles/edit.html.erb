@@ -1,13 +1,13 @@
 <div class="mx-auto md:w-2/3 w-full">
   <h1 class="font-bold text-4xl">Editing article</h1>
 
-  <button class="bg-yellow-500 rounded-full px-6 py-2 text-lg font-medium tracking-wide shadow-md hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:ring-opacity-50">
-  <span class="text-black">BUTTON</span>
-  </button>
+      <hr class="w-12 h-px my-5 mb-2 bg-gray-400">
+    </div>
+    <div class="text-white">
+      <%= render "form", article: @article %>
+    </div>
 
-
-  <%= render "form", article: @article %>
-
-  <%= link_to "Show this article", @article, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-  <%= link_to "Back to articles", articles_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Show this article", @article, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Back to articles", articles_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+  </div>
 </div>

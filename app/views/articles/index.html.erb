@@ -1,21 +1,22 @@
-<div class="w-full">
-  <% if notice.present? %>
-    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
-  <% end %>
+<div class="flex justify-center">
+  <div class="w-1/2">
+    <div class="flex bg-black justify-center" >
+      <hr class="w-12 h-px my-5 mb-2 bg-gray-400">
 
-  <% if user_signed_in? %>
-    <p>Welcome <%= current_user.username %></p>
-  <% else %>
-    <p>Welcome guest</p>
-  <% end %>
+      <div class="bg-gray-400" style="width: 12rem; border-top-left-radius: 3rem; border-top-right-radius: 3rem; border-bottom-right-radius: 3rem; border-bottom-left-radius: 3rem">
+        
+        <h1 class="ml-12 text-3xl">Entries</h1>
+      </div>
 
-  <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl">Articles</h1>
-  </div>
+      <hr class="w-12 h-px my-5 mb-2 bg-gray-400">
 
-  <br>
-
-  <div id="articles" class="min-w-full">
-    <%= render @articles %>
+      
+    </div>
+  
+    <br>
+    
+    <div id="articles" class="min-w-full text-white w-full">
+      <%= render @articles %>
+    </div>
   </div>
 </div>
