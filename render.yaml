@@ -1,7 +1,8 @@
 databases:
   - name: CaptainsBlog
-    databaseName: CaptainsBlog
-    user: CaptainsBlog
+    databaseName: <%= ENV["DATABASE_URL"] %>
+    user: <%= ENV["DATABASE_USERNAME"] %>
+    password: <%= ENV["DATABASE_PASSWORD"] %>
 
 services:
   - type: web
