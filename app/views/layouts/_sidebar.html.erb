@@ -1,5 +1,5 @@
 <div class="flex">
-  <div class="sidebar flex-col bg-blue-500 h-screen" style="margin: 0.25rem 0 0 0.5rem; width: 8rem">
+  <div class="sidebar flex-col bg-blue-500 min-h-screen" style="margin: 0.25rem 0 0 0.5rem; width: 8rem">
     <ul>
       <button class="hover:bg-blue-200 w-32 h-16 border-b-2 border-black" style="">
         <li><%= link_to 'Home', root_path, style: "margin: 4rem 0 4rem 0"%></li>
@@ -13,7 +13,7 @@
           <% end %>
         </li>
       </button>
-      <button class="hover:bg-blue-200 w-32 h-16 border-b-2 border-black" style="">
+      <button class="hover:bg-blue-200 w-32 h-16 border-b-2 border-black">
         <li><%= link_to 'New Entry', new_article_path, class: "" %></li>
       </button>
     </ul>

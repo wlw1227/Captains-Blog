@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   root to: "articles#index"
 
   resources :articles do
-    resources :comments
+    resources :comments, only: [:create, :destroy]
   end
 end

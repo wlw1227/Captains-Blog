@@ -1,17 +1,9 @@
 <%= form_with(model: @article.comments.new, url: article_comments_path(@article), local: true) do |form| %>
   <div class="field">
-    <%= form.label :name %><br />
-    <%= form.text_field :name %>
-  </div>
-  <div class="field">
-    <%= form.label :email %><br />
-    <%= form.text_field :email %>
-  </div>
-  <div class="field">
-    <%= form.label :body %><br />
-    <%= form.text_field :body %>
+    <%= form.label :"comment as #{current_user.username}", class: "text-white" %><br />
+    <%= form.text_area :body %>
   </div>
   <div class="actions">
-    <%= form.submit 'Add', class: "ml-2 rounded-lg py-3 px-5 bg-gray-100" %>
+    <%= form.submit 'Add', class: "rounded-lg px-2 inline-block font-medium text-white border-2 border-white cursor-pointer" %>
   </div>
 <% end %>

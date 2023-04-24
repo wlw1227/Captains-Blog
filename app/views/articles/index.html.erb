@@ -9,14 +9,16 @@
       </div>
 
       <hr class="w-12 h-px my-5 mb-2 bg-gray-400">
-
-      
     </div>
   
     <br>
     
     <div id="articles" class="min-w-full text-white w-full">
       <%= render @articles %>
+      </br>
+      <div class="flex justify-center">
+        <%== pagy_nav(@pagy) %>
+      </div>
     </div>
   </div>
 </div>

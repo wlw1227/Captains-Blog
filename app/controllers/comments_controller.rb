@@ -4,6 +4,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = @article.comments.new(comment_params)
+    @comment.name = current_user.username
     if @comment.save!
       redirect_to @article, notice: 'Thanks for your comment'
     else

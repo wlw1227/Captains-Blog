@@ -1,7 +1,7 @@
 <div id="<%= dom_id @article %>" class="text-white">
-  <h4 class="font-medium font-bold underline">
-    <%= link_to @article.title, @article %>
+  <h4 class="text-gray-500">
+    <%= link_to @article.title, @article, class: "font-bold text-white" %> | Stardate <%= @article.stardate %> | Posted by Captain <%= User.find(@article.user_id).username %>
   </h4> 
-  
+  </br>
   <%= @article.body %>
 </div>

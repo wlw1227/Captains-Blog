@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  include Pagy::Backend
+  
   before_action :authenticate, except: [:index, :show]
   before_action :set_article, only: [:show]
 
@@ -9,6 +11,8 @@ class ArticlesController < ApplicationController
     else
       @articles = Article.all
     end
+
+    @pagy, @articles = pagy(@articles)
   end
 
   # GET /articles/1 or /articles/1.json
@@ -22,7 +26,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1/edit
   def edit
-    @articles = current_user.articles.find(params[:id])
+    @article = current_user.articles.find(params[:id])
   end
 
   # POST /articles or /articles.json

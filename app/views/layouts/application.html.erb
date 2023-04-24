@@ -11,7 +11,7 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="bg-black">
+  <body class="bg-black flex flex-col min-h-screen">
     <%= render 'layouts/header' %>
     <%= render 'layouts/nav' %>
     <div class="flex">
@@ -19,7 +19,8 @@
       <main class="mt-10 ml-10 container mx-auto mr-14" >
         <%= yield %>
       </main>
-    </div> 
+    </div>
+    <%= render 'layouts/footer' %> 
     <p class="alert"><%= alert %></p>
     
   </body>
