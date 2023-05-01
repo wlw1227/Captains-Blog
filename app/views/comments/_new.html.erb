@@ -1,9 +1,19 @@
 <%= form_with(model: @article.comments.new, url: article_comments_path(@article), local: true) do |form| %>
-  <div class="field">
-    <%= form.label :"comment as #{current_user.username}", class: "text-white" %><br />
-    <%= form.text_area :body %>
-  </div>
-  <div class="actions">
-    <%= form.submit 'Add', class: "rounded-lg px-2 inline-block font-medium text-white border-2 border-white cursor-pointer" %>
-  </div>
+  <% if user_signed_in? %>
+    <div class="field">
+      <%= form.label :"comment as #{current_user.username}", class: "text-white" %><br />
+      <%= form.text_area :body %>
+    </div>
+    <div class="actions">
+      <%= form.submit 'Add', class: "rounded-lg px-2 inline-block font-medium text-white border-2 border-white cursor-pointer" %>
+    </div>
+  <% else %>
+    <div class="field">
+      <%= link_to 'Sign in to comment', new_user_registration_path , class: "text-white" %><br />
+      <%= form.text_area :body %>
+    </div>
+    <div class="actions">
+      <%= form.submit 'Add', class: "rounded-lg px-2 inline-block font-medium text-white border-2 border-white cursor-pointer" %>
+    </div>
+  <% end %>
 <% end %>
