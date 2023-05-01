@@ -7,11 +7,14 @@
     <%= render 'articleShow' %>
     </br>
     
-    <%= link_to 'Edit Entry', edit_article_path(@article), class: "rounded-lg px-2 inline-block font-medium text-white border-2 border-white" %>
-    <div class="inline-block ml-2">
-      <%= button_to 'Delete Entry', article_path(@article), method: :delete, class: "rounded-lg px-2 inline-block font-medium text-white border-2 border-white" %>
-    </div>
-    </br>
+    <% if current_user.id == @article.user_id %>
+      <%= link_to 'Edit Entry', edit_article_path(@article), class: "rounded-lg px-2 inline-block font-medium text-white border-2 border-white" %>
+      <div class="inline-block ml-2">
+        <%= button_to 'Delete Entry', article_path(@article), method: :delete, class: "rounded-lg px-2 inline-block font-medium text-white border-2 border-white" %>
+      </div>
+      </br>
+    <% end %>
+
     </br>
     <h3 class="text-white">Comments</h3>
     <div id="comments">
