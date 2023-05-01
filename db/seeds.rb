@@ -13,7 +13,7 @@ end
 
 # Create articles for each user
 User.all.each do |user|
-  10.times do
+  5.times do
     # Randomly select a category
     category = Category.all.sample
 
